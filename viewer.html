@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹툰 뷰어</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <button class="back-btn" onclick="goBack()">⬅</button>
+    <h1 id="webtoon-title">웹툰 제목</h1>
+  </header>
+
+  <main class="viewer">
+    <img id="webtoon-image" src="" alt="웹툰 이미지">
+  </main>
+
+  <footer>
+    <p>© 2025 AI 학습만화 | 모두를 위한 인공지능 학습</p>
+    <p>Made by Ban Teacher</p>
+    <div class="footer-links">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">문의하기</a>
+    </div>
+  </footer>
+
+
+  <button id="scrollToTopBtn">⬆ TOP</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const webtoonId = urlParams.get("id");
+      const subtitle = urlParams.get("subtitle");
+      const title = urlParams.get("title");
+
+      if (subtitle && title) {
+        document.getElementById("webtoon-title").innerText = `${subtitle} - ${title}`;
+      } else {
+        document.getElementById("webtoon-title").innerText = "웹툰을 찾을 수 없습니다.";
+      }
+
+      const webtoonData = {
+        1: { image: "./img/webtoon1.jpg" },
+        2: { image: "./img/webtoon2.jpg" },
+        3: { image: "./img/webtoon3.jpg" },
+        4: { image: "./img/webtoon4.jpg" },
+      };
+
+      if (webtoonData[webtoonId]) {
+        document.getElementById("webtoon-image").src = webtoonData[webtoonId].image;
+      }
+    });
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+
+</html>
