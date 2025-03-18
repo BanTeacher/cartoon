@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         )}&title=${encodeURIComponent(title)}`;
       } else {
         // 🚫 웹툰이 아직 오픈되지 않음 -> 경고 메시지
-        alert("앗! 아직 오픈되지 않았어요.\n아쉽지만 다음에 이용해주세요~\n반쌤");
+        alert("앗! 아직 오픈되지 않았어요.\n아쉽지만 다음에 이용해주세요~\n-반쌤-");
       }
     });
   });
