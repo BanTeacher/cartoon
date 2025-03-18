@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🔥 여기에서 오픈된 웹툰을 설정할 수 있음
   const openWebtoons = {
+    //true 오픈, false 닫힘
     1: true,
     2: true,
-    3: false, // 3화도 아직 닫힘
-    4: false, // 4화도 아직 닫힘
+    3: true,
+    4: true, 
+    5: false // 닫힘
   };
 
   webtoonCards.forEach((card) => {
