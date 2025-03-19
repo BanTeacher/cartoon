@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     2: true,
     3: true,
     4: false, // 닫힘
-    5: false // 닫힘
+    5: true // 닫힘
   };
 
   webtoonCards.forEach((card) => {
