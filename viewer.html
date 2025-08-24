@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>웹툰 뷰어</title>
+  <title>AI 학습 웹툰 사이트</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
+  <header class="viewer-header">
     <button class="back-btn" onclick="goBack()">⬅</button>
     <h1 id="webtoon-title">웹툰 제목</h1>
   </header>
@@ -50,8 +50,6 @@
         3: { image: "./img/webtoon3.jpg" },
         4: { image: "./img/webtoon4.jpg" },
         5: { image: "./img/webtoon5.jpg" },
-        6: { image: "./img/webtoon6.jpg" },
-        7: { image: "./img/webtoon7.jpg" },
       };
 
       if (webtoonData[webtoonId]) {
