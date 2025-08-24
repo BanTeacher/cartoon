@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.addEventListener("click", () => {
       if (!openWebtoons[webtoonId]) {
-        alert("앗! 아직 오픈되지 않았어요.\n다음에 이용해주세요~");
+        alert("앗! 아직 오픈되지 않았어요.\n우리 조금만 더 배우고 읽어볼까요?~");
         return;
       }
       const subtitle = card.querySelector(".subtitle").innerText;
@@ -114,3 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
