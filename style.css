@@ -21,6 +21,130 @@ header {
   padding: 1rem;
 }
 
+/* 관리자 버튼 (기본 데스크탑 모드) */
+#adminBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 8px 15px;
+  background-color: #ff9800;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+#adminBtn:hover {
+  background-color: #e68900;
+  transform: scale(1.05);
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #adminBtn {
+    position: static; /* absolute → static 으로 바꿔서 겹치지 않게 */
+    margin-top: 5px;
+    align-self: flex-end; /* 오른쪽 정렬 */
+  }
+}
+
+@media (max-width: 480px) {
+  #adminBtn {
+    font-size: 10px;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+}
+
+/* 모달 배경 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 모달 박스 */
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.modal-content input[type="password"] {
+  padding: 8px;
+  margin: 10px 0;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin: 5px 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.modal-content button {
+  margin: 10px 5px 0;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.modal-content button:first-of-type {
+  background: #ff6b6b;
+  color: white;
+}
+.modal-content button:last-of-type {
+  background: #ccc;
+  color: black;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 h1 {
   margin: 0;
   font-size: 1.5em;
@@ -65,13 +189,44 @@ h1 {
   border-radius: 10px;
 }
 
-.viewer {
-  padding: 20px;
+/* viewer.html 전용 헤더 고정 */
+.viewer-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* 헤더 높이 지정 */
+  background-color: #ff6b6b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.viewer img {
-  width: 90%;
-  max-width: 800px;
+.viewer-header h1 {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.viewer-header .back-btn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* 본문: 헤더 높이만큼 패딩 추가 */
+.viewer {
+  padding: 80px 20px 20px; /* 60px(header 높이) + 여유 20px */
 }
 
 .back-btn {
@@ -89,36 +244,6 @@ h1 {
 .back-btn:hover,
 .back-btn:active {
   color: black;
-}
-
-/* 맨 위로 가기 버튼 스타일 */
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: #ff6b6b;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  opacity: 0;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-#scrollToTopBtn:hover {
-  background-color: #ff4f4f;
-  transform: scale(1.1);
-}
-
-/* 추가적으로 하단 스크롤 여백을 고려 */
-.viewer {
-  padding: 20px;
-  z-index: 9999;
 }
 
 footer {
