@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let openWebtoons = JSON.parse(localStorage.getItem("openWebtoons")) || {
     1: true,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
+    2: true,
+    3: true,
+    4: true,
+    5: true,
+    6: true,
+    7: true,
   };
 
   // 🔹 웹툰 카드 클릭 이벤트
@@ -17,7 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.addEventListener("click", () => {
       if (!openWebtoons[webtoonId]) {
-        alert("앗! 아직 오픈되지 않았어요.\n우리 조금만 더 배우고 읽어볼까요?~");
+        alert(
+          "앗! 아직 오픈되지 않았어요.\n우리 조금만 더 배우고 읽어볼까요?~"
+        );
         return;
       }
       const subtitle = card.querySelector(".subtitle").innerText;
@@ -114,5 +118,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-
