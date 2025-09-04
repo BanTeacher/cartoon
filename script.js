@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let openWebtoons = JSON.parse(localStorage.getItem("openWebtoons")) || {
     1: true,
-    2: false,
-    3: false,
+    2: true,
+    3: true,
     4: false,
     5: false,
     6: false,
@@ -118,4 +118,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
