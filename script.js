@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     3: true,
     4: true,
     5: true,
-    6: false,
-    7: false,
+    6: true,
+    7: true,
   };
 
   // 🔹 웹툰 카드 클릭 이벤트
